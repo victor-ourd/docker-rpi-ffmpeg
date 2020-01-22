@@ -8,7 +8,7 @@ WORKDIR /root
 RUN git clone https://github.com/FFmpeg/FFmpeg.git --depth 1
 
 WORKDIR /root/FFmpeg
-RUN ./configure --arch=armel --target-os=linux --enable-gpl --enable-omx --enable-omx-rpi --enable-nonfree
+RUN ./configure --arch=armel --target-os=linux --enable-gpl --enable-omx --enable-omx-rpi --enable-nonfree --enable-openssl
 RUN make -j$(nproc)
 RUN make install
 
